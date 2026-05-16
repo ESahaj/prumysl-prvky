@@ -381,623 +381,626 @@
   </div>
 
   <script>
-    const questionBank = [
-  {
-    question: "Která vlastnost je typická pro většinu kovů?",
-    answers: ["Dobře vedou elektrický proud a teplo", "Snadno tvoří plynné molekuly", "Mají velmi nízkou hustotu", "Jsou za běžných podmínek vždy kapalné"],
-    correct: 0,
-    explanation: "Většina kovů dobře vede elektrický proud i teplo, má kovový lesk a je dobře zpracovatelná."
-  },
-  {
-    question: "Která vlastnost je typická pro většinu nekovů?",
-    answers: ["Obvykle špatně vedou elektrický proud", "Mají vysokou elektrickou vodivost", "Jsou vždy kujné a tažné", "Vždy vytvářejí slitiny"],
-    correct: 0,
-    explanation: "Nekovy většinou špatně vedou elektrický proud a nemají typické kovové vlastnosti."
-  },
-  {
-    question: "Proč se měď často používá na elektrické vodiče?",
-    answers: ["Má velmi dobrou elektrickou vodivost", "Je nejreaktivnější kov", "Má velmi nízkou teplotu tání", "Je za běžných podmínek kapalná"],
-    correct: 0,
-    explanation: "Měď má výbornou elektrickou vodivost, proto se používá ve vodičích, kabelech a kontaktech."
-  },
-  {
-    question: "Která vlastnost mědi je důležitá při výrobě vodičů a kontaktů?",
-    answers: ["Tažnost a elektrická vodivost", "Křehkost a malá hustota", "Radioaktivita a tvrdost", "Hořlavost a rozpustnost ve vodě"],
-    correct: 0,
-    explanation: "Měď je dobře tažná a velmi dobře vede elektrický proud, proto je vhodná pro elektrotechniku."
-  },
-  {
-    question: "Proč se hliník používá v dopravě a konstrukcích?",
-    answers: ["Je lehký, pevný a dobře zpracovatelný", "Je velmi těžký a křehký", "Snadno rezaví ve vlhkém vzduchu", "Je za běžných podmínek kapalný"],
-    correct: 0,
-    explanation: "Hliník má malou hustotu, je poměrně pevný a dobře se tvaruje, proto se využívá v dopravě i konstrukcích."
-  },
-  {
-    question: "Proč hliník na vzduchu poměrně dobře odolává korozi?",
-    answers: ["Na povrchu se vytváří ochranná vrstva oxidu", "Hliník vůbec nereaguje s kyslíkem", "Hliník se ve vzduchu mění na slitinu", "Na povrchu se tvoří vrstva uhlíku"],
-    correct: 0,
-    explanation: "Na povrchu hliníku vzniká tenká vrstva oxidu hlinitého, která chrání kov před další korozí."
-  },
-  {
-    question: "Který kov je základem oceli?",
-    answers: ["Železo", "Měď", "Hliník", "Zinek"],
-    correct: 0,
-    explanation: "Ocel je slitina, jejímž hlavním základem je železo."
-  },
-  {
-    question: "Co se děje se železem ve vlhkém prostředí za přístupu kyslíku?",
-    answers: ["Koroduje a vzniká rez", "Mění se na ocel", "Pasivuje se", "Sublimuje"],
-    correct: 0,
-    explanation: "Železo ve vlhku reaguje s kyslíkem a vodou. Výsledkem je koroze, běžně označovaná jako rezavění."
-  },
-  {
-    question: "Která slitina se běžně používá na výrobu příborů?",
-  answers: ["Nerezová ocel", "Amalgám", "Mosaz", "Pájka"],
-  correct: 0,
-  explanation: "Nerezová ocel je odolná vůči korozi, pevná a hygienicky vhodná, proto se používá na výrobu příborů, nádobí a kuchyňských pomůcek."
-  },
-  {
-    question: "Proč je železo důležité pro lidské tělo?",
-    answers: ["Je součástí krevního barviva přenášejícího kyslík", "Je hlavní stavební složkou kostí", "Zajišťuje tvorbu zubní skloviny", "Nahrazuje v těle vápník"],
-    correct: 0,
-    explanation: "Železo je součástí hemoglobinu, který pomáhá přenášet kyslík v krvi."
-  },
-  {
-    question: "Proč se zinek používá k ochraně železa před korozí?",
-    answers: ["Vytváří ochranný povlak na povrchu železa", "Zvyšuje rozpustnost železa ve vodě", "Mění železo na nerezovou ocel", "Odstraňuje z povrchu železa kyslík"],
-    correct: 0,
-    explanation: "Pozinkování chrání železo před korozí, protože zinek tvoří ochrannou vrstvu."
-  },
-  {
-    question: "Která slitina vzniká smícháním mědi a zinku?",
-    answers: ["Mosaz", "Bronz", "Ocel", "Dural"],
-    correct: 0,
-    explanation: "Mosaz je slitina mědi a zinku."
-  },
-  {
-    question: "Která slitina vzniká smícháním mědi a cínu?",
-    answers: ["Bronz", "Mosaz", "Nerezová ocel", "Pájka"],
-    correct: 0,
-    explanation: "Bronz je slitina mědi a cínu."
-  },
-  {
-    question: "Proč se zlato používá ve šperkařství?",
-    answers: ["Je chemicky stálé, lesklé a dobře zpracovatelné", "Snadno koroduje a mění barvu", "Je velmi křehké a špatně kujné", "Je běžně rozpustné ve vodě"],
-    correct: 0,
-    explanation: "Zlato je ušlechtilý kov. Je stálé, má výrazný lesk a dobře se zpracovává."
-  },
-  {
-    question: "Proč se stříbro využívá v elektrotechnice?",
-    answers: ["Má velmi vysokou elektrickou vodivost", "Je nejlehčí ze všech kovů", "Je zcela odolné vůči černání", "Je za běžných podmínek plynné"],
-    correct: 0,
-    explanation: "Stříbro patří mezi nejlepší vodiče elektrického proudu, proto má význam v elektrotechnice."
-  },
-  {
-    question: "Proč může stříbro při delším pobytu na vzduchu černat?",
-    answers: ["Na povrchu vznikají sloučeniny stříbra se sírou", "Stříbro se mění na grafit", "Stříbro reaguje s dusíkem na vzduchu", "Stříbro se postupně rozpouští ve vodní páře"],
-    correct: 0,
-    explanation: "Stříbro může černat kvůli vzniku tmavých sloučenin na povrchu, zejména reakcí se sloučeninami síry."
-  },
-  {
-    question: "Který kov je za běžných podmínek kapalný?",
-    answers: ["Rtuť", "Cín", "Olovo", "Zinek"],
-    correct: 0,
-    explanation: "Rtuť je kov, který je za běžných podmínek kapalný."
-  },
-  {
-    question: "Proč se s rtutí musí zacházet velmi opatrně?",
-    answers: ["Je toxická a nebezpečné jsou i její páry", "Je velmi hořlavá na vzduchu", "Je silně radioaktivní", "Při dotyku okamžitě tuhne"],
-    correct: 0,
-    explanation: "Rtuť a její páry jsou toxické, proto je nutné zabránit úniku rtuti a jejímu vdechování."
-  },
-  {
-    question: "Proč se olovo dnes používá omezeněji než dříve?",
-    answers: ["Je toxické pro člověka i životní prostředí", "Je příliš lehké pro technické použití", "Snadno se rozpouští v čisté vodě", "Nelze jej zpracovávat do slitin"],
-    correct: 0,
-    explanation: "Olovo je toxický těžký kov, proto se jeho použití v mnoha výrobcích omezuje."
-  },
-  {
-    question: "K čemu se využívá olovo díky své vysoké hustotě?",
-    answers: ["K ochraně před některými druhy záření", "K výrobě lehkých konstrukcí letadel", "K plnění potápěčských lahví", "K výrobě elektrických izolantů"],
-    correct: 0,
-    explanation: "Olovo má vysokou hustotu a dobře pohlcuje některé druhy záření, proto se používá jako stínicí materiál."
-  },
-  {
-    question: "Která vlastnost kyslíku je důležitá při hoření?",
-    answers: ["Podporuje hoření látek", "Brání každé oxidaci", "Je inertní vůči většině prvků", "Je hlavní složkou zemního plynu"],
-    correct: 0,
-    explanation: "Kyslík sám nehoří, ale podporuje hoření jiných látek."
-  },
-  {
-    question: "Proč je kyslík nezbytný pro člověka?",
-    answers: ["Je potřebný pro dýchání buněk", "Je hlavní stavební složkou kostí", "Zajišťuje trávení tuků v žaludku", "Nahrazuje v těle vodu"],
-    correct: 0,
-    explanation: "Kyslík je nezbytný pro buněčné dýchání, při kterém organismy získávají energii."
-  },
-  {
-    question: "Který prvek je nejvíce zastoupeným plynem ve vzduchu?",
-    answers: ["Dusík", "Kyslík", "Oxid uhličitý", "Argon"],
-    correct: 0,
-    explanation: "Největší objemovou část vzduchu tvoří dusík."
-  },
-  {
-    question: "Proč dusík za běžných podmínek nepodporuje hoření?",
-    answers: ["Je poměrně málo reaktivní", "Je silné oxidační činidlo", "Snadno se rozkládá na kyslík", "Má výrazné dezinfekční účinky"],
-    correct: 0,
-    explanation: "Dusík je za běžných podmínek málo reaktivní, a proto hoření nepodporuje."
-  },
-  {
-    question: "K čemu se dusík používá díky své malé reaktivitě?",
-    answers: ["K vytváření ochranné atmosféry", "K bělení textilu", "K dezinfekci pitné vody", "K výrobě skla z písku"],
-    correct: 0,
-    explanation: "Dusík se používá jako inertní atmosféra tam, kde je potřeba omezit reakce se vzdušným kyslíkem."
-  },
-  {
-    question: "K čemu se používá kapalný dusík?",
-    answers: ["Jako chladicí médium", "Jako palivo pro běžné spalovací motory", "Jako dezinfekce bazénové vody", "Jako základní složka kuchyňské soli"],
-    correct: 0,
-    explanation: "Kapalný dusík má velmi nízkou teplotu, proto se využívá k chlazení."
-  },
-  {
-    question: "Proč je vodík považován za velmi lehký plyn?",
-    answers: ["Má nejmenší hustotu ze všech plynů", "Obsahuje nejvíce protonů v jádře", "Je těžší než vzduch", "Je tvořen velkými částicemi kovu"],
-    correct: 0,
-    explanation: "Vodík je nejlehčí prvek a má velmi malou hustotu."
-  },
-  {
-    question: "Proč se vodík dříve používal k plnění balónů?",
-    answers: ["Je lehčí než vzduch", "Je méně reaktivní než helium", "Má dezinfekční účinky", "Je hlavní složkou vzduchu"],
-    correct: 0,
-    explanation: "Vodík je velmi lehký plyn, takže umožňoval balónům stoupat."
-  },
-  {
-    question: "Proč je použití vodíku v balónech nebezpečné?",
-    answers: ["Je hořlavý a se vzduchem může tvořit výbušnou směs", "Je silně jedovatý i v malém množství", "Má vysokou hustotu", "Při běžné teplotě samovolně tuhne"],
-    correct: 0,
-    explanation: "Vodík je hořlavý a směs vodíku se vzduchem může být výbušná."
-  },
-  {
-    question: "K čemu se vodík významně používá v chemickém průmyslu?",
-    answers: ["K výrobě amoniaku", "K výrobě kuchyňské soli", "K bělení papíru chlornany", "K plnění běžných žárovek"],
-    correct: 0,
-    explanation: "Vodík se používá například při syntéze amoniaku, který je důležitý pro výrobu hnojiv."
-  },
-  {
-    question: "Proč je helium vhodnější k plnění balónků než vodík?",
-    answers: ["Je lehké a nehořlavé", "Je těžší a reaktivnější", "Podporuje hoření", "Snadno reaguje s kyslíkem"],
-    correct: 0,
-    explanation: "Helium je lehčí než vzduch a zároveň nehořlavé, proto je bezpečnější než vodík."
-  },
-  {
-    question: "Která vlastnost je typická pro vzácné plyny?",
-    answers: ["Mají velmi malou reaktivitu", "Snadno vytvářejí soli s kovy", "Jsou za běžných podmínek pevné", "Silně podporují hoření"],
-    correct: 0,
-    explanation: "Vzácné plyny mají zaplněnou valenční vrstvu elektronů, proto jsou velmi málo reaktivní."
-  },
-  {
-    question: "Proč se vzácné plyny používají v ochranných atmosférách?",
-    answers: ["Brání nežádoucím reakcím se vzdušným kyslíkem", "Zvyšují rychlost koroze", "Snadno reagují s kovy", "Rozkládají vodu na vodík a kyslík"],
-    correct: 0,
-    explanation: "Díky malé reaktivitě chrání vzácné plyny látky před reakcemi s kyslíkem a dalšími složkami vzduchu."
-  },
-  {
-    question: "Kde se využívá schopnost některých vzácných plynů svítit ve výboji?",
-    answers: ["V reklamních a osvětlovacích trubicích", "Při výrobě hnojiv", "Při výrobě cementu", "Při pozinkování železa"],
-    correct: 0,
-    explanation: "Vzácné plyny mohou ve výbojových trubicích vydávat světlo, proto se využívají v osvětlovací technice."
-  },
-  {
-    question: "Proč se argon používá například při svařování?",
-    answers: ["Vytváří ochrannou inertní atmosféru", "Zvyšuje obsah kyslíku v okolí svaru", "Reaguje s kovem a vytváří rez", "Slouží jako silné oxidační činidlo"],
-    correct: 0,
-    explanation: "Argon chrání svařovaný kov před nežádoucí reakcí se vzdušným kyslíkem."
-  },
-  {
-    question: "Která vlastnost je typická pro halogeny?",
-    answers: ["Jsou reaktivní nekovy", "Jsou málo reaktivní vzácné plyny", "Jsou kujné a tažné kovy", "Jsou hlavní složkou slitin"],
-    correct: 0,
-    explanation: "Halogeny jsou reaktivní nekovy, které snadno tvoří sloučeniny."
-  },
-  {
-    question: "Proč se halogeny v přírodě obvykle nevyskytují jako volné prvky?",
-    answers: ["Jsou velmi reaktivní a tvoří sloučeniny", "Mají příliš nízkou hustotu", "Jsou všechny radioaktivní", "Nerozpouštějí se v žádných látkách"],
-    correct: 0,
-    explanation: "Halogeny snadno reagují s jinými prvky, a proto se v přírodě nacházejí hlavně ve sloučeninách."
-  },
-  {
-    question: "K čemu se používá chlor při úpravě vody?",
-    answers: ["K dezinfekci vody", "Ke zvýšení tvrdosti vody", "K odstranění všech minerálních látek", "K výrobě kyslíku z vody"],
-    correct: 0,
-    explanation: "Chlor ničí mikroorganismy, proto se používá k dezinfekci vody."
-  },
-  {
-    question: "Které použití chloru je běžné v průmyslu?",
-    answers: ["Výroba chlorovaných organických sloučenin a plastů", "Výroba hliníku z bauxitu", "Plnění potápěčských lahví", "Výroba dusíkatých hnojiv"],
-    correct: 0,
-    explanation: "Chlor se používá například při výrobě chlorovaných organických sloučenin, které mají význam při výrobě některých plastů."
-  },
-  {
-    question: "Jaká vlastnost chloru vyžaduje opatrnost při zacházení?",
-    answers: ["Je toxický a dráždivý plyn", "Je zcela netečný plyn", "Je biologicky nezbytný k dýchání", "Je pevný kov s vysokou hustotou"],
-    correct: 0,
-    explanation: "Chlor je toxický a dráždivý, proto se s ním musí zacházet opatrně."
-  },
-  {
-    question: "Proč je fluor považován za mimořádně reaktivní prvek?",
-    answers: ["Snadno reaguje s mnoha látkami", "Má vlastnosti vzácného plynu", "Je velmi málo elektronegativní", "V přírodě se běžně vyskytuje volný"],
-    correct: 0,
-    explanation: "Fluor patří mezi nejreaktivnější prvky a je velmi silným oxidačním činidlem."
-  },
-  {
-    question: "Proč je jód důležitý pro lidský organismus?",
-    answers: ["Je potřebný pro správnou činnost štítné žlázy", "Je hlavním zdrojem energie pro svaly", "Je základní složkou krevního barviva", "Je stavební složkou zubní skloviny místo vápníku"],
-    correct: 0,
-    explanation: "Jód je důležitý pro tvorbu hormonů štítné žlázy."
-  },
-  {
-    question: "Proč se do kuchyňské soli někdy přidávají sloučeniny jódu?",
-    answers: ["Pomáhají předcházet nedostatku jódu ve stravě", "Zvyšují obsah kyslíku v soli", "Způsobují lepší elektrickou vodivost soli", "Mění sůl na dezinfekční prostředek"],
-    correct: 0,
-    explanation: "Jodidovaná sůl pomáhá doplňovat jód, který je důležitý pro štítnou žlázu."
-  },
-  {
-    question: "Která vlastnost jódu se často ukazuje při školních pokusech?",
-    answers: ["Sublimace", "Koroze", "Krystalizace z kovové taveniny", "Elektrická vodivost jako u kovů"],
-    correct: 0,
-    explanation: "Jód může přecházet z pevného skupenství přímo na páry, což se nazývá sublimace."
-  },
-  {
-    question: "Která vlastnost je typická pro síru?",
-    answers: ["Je žlutá pevná nekovová látka", "Je bezbarvý vzácný plyn", "Je kapalný kov", "Je stříbrolesklý alkalický kov"],
-    correct: 0,
-    explanation: "Síra je známá jako žlutá pevná látka a patří mezi nekovy."
-  },
-  {
-    question: "K čemu se využívá velká část síry v průmyslu?",
-    answers: ["K výrobě kyseliny sírové", "K výrobě hliníkových slitin", "K plnění výbojek", "K výrobě kapalného dusíku"],
-    correct: 0,
-    explanation: "Síra je významnou surovinou pro výrobu kyseliny sírové."
-  },
-  {
-    question: "K čemu se používá síra při zpracování kaučuku?",
-    answers: ["K vulkanizaci", "K elektrolýze", "K pasivaci", "K frakční destilaci"],
-    correct: 0,
-    explanation: "Síra se používá při vulkanizaci kaučuku, čímž se zlepšují vlastnosti pryže."
-  },
-  {
-    question: "Jak poznáme sulfan podle zápachu?",
-    answers: ["Zapáchá po zkažených vejcích", "Má zápach po chloru", "Je typicky nasládlý", "Je zcela bez zápachu"],
-    correct: 0,
-    explanation: "Sulfan je jedovatý plyn se zápachem po zkažených vejcích."
-  },
-  {
-    question: "Proč je uhlík významný pro živé organismy?",
-    answers: ["Je základním prvkem organických látek", "Je hlavní složkou vzduchu", "Je nezbytný pouze pro tvorbu kovů", "Nahrazuje v organismech vodík"],
-    correct: 0,
-    explanation: "Uhlík tvoří základ organických látek, ze kterých jsou stavěna těla živých organismů."
-  },
-  {
-    question: "Která forma uhlíku je velmi tvrdá a používá se k broušení nebo řezání?",
-    answers: ["Diamant", "Grafit", "Aktivní uhlí", "Saze"],
-    correct: 0,
-    explanation: "Diamant je velmi tvrdá forma uhlíku a využívá se ve šperkařství i v průmyslu."
-  },
-  {
-    question: "Proč se grafit používá v tužkách?",
-    answers: ["Je měkký a zanechává stopu na papíře", "Je průhledný a velmi tvrdý", "Snadno se taví při pokojové teplotě", "Je kapalný a dobře se rozpíjí"],
-    correct: 0,
-    explanation: "Grafit je měkký a jeho vrstvy po sobě snadno kloužou, proto zanechává stopu."
-  },
-  {
-    question: "Proč grafit vede elektrický proud?",
-    answers: ["Obsahuje pohyblivé elektrony ve své struktuře", "Je složen z iontů kuchyňské soli", "Je kapalný kov", "Obsahuje velké množství vody"],
-    correct: 0,
-    explanation: "Ve struktuře grafitu jsou pohyblivé elektrony, které umožňují vedení elektrického proudu."
-  },
-  {
-    question: "K čemu se používá aktivní uhlí?",
-    answers: ["K zachycování některých nečistot a plynů", "K výrobě chlorované vody", "K výrobě kovových slitin", "K nahrazení kyslíku při dýchání"],
-    correct: 0,
-    explanation: "Aktivní uhlí má velký povrch a dokáže na sebe vázat některé látky, proto se používá ve filtrech."
-  },
-  {
-    question: "Proč se oxid uhličitý používá v některých hasicích přístrojích?",
-    answers: ["Omezuje přístup kyslíku k hořící látce", "Podporuje hoření paliva", "Rozkládá vodu na vodík a kyslík", "Zvyšuje teplotu plamene"],
-    correct: 0,
-    explanation: "Oxid uhličitý nepodporuje hoření a vytlačuje kyslík z okolí plamene."
-  },
-  {
-    question: "Co je suchý led?",
-    answers: ["Pevný oxid uhličitý", "Zmrzlá destilovaná voda", "Pevný kyslík", "Krystalický chlorid sodný"],
-    correct: 0,
-    explanation: "Suchý led je pevný oxid uhličitý, který za běžného tlaku sublimuje."
-  },
-  {
-    question: "Proč se křemík používá v elektronice?",
-    answers: ["Má polovodičové vlastnosti", "Je nejlepší kovový vodič", "Je běžně kapalný", "Je silně radioaktivní"],
-    correct: 0,
-    explanation: "Křemík je polovodič, proto je důležitý při výrobě čipů a elektronických součástek."
-  },
-  {
-    question: "Kde se křemík v přírodě nejčastěji vyskytuje?",
-    answers: ["Ve sloučeninách, například v křemeni a křemičitanech", "Jako volný plyn ve vzduchu", "Pouze v živých organismech", "Jako kapalný kov v rudách"],
-    correct: 0,
-    explanation: "Křemík se v přírodě vyskytuje hlavně v oxidu křemičitém a křemičitanech."
-  },
-  {
-    question: "Proč jsou sloučeniny křemíku důležité ve stavebnictví?",
-    answers: ["Jsou součástí skla, keramiky, cementu a hornin", "Používají se výhradně jako paliva", "Jsou hlavní složkou vzduchu", "Nahrazují železo při výrobě oceli"],
-    correct: 0,
-    explanation: "Sloučeniny křemíku jsou součástí mnoha přírodních i technických materiálů, například skla, keramiky a cementu."
-  },
-  {
-    question: "Která vlastnost alkalických kovů, například sodíku a draslíku, je pro ně typická?",
-    answers: ["Jsou velmi reaktivní", "Jsou zcela inertní", "Jsou za běžných podmínek plynné", "Patří mezi ušlechtilé kovy"],
-    correct: 0,
-    explanation: "Alkalické kovy jsou velmi reaktivní, zejména při styku s vodou."
-  },
-  {
-    question: "Proč se sodík nesmí vhazovat do vody?",
-    answers: ["Prudce reaguje s vodou a vzniká vodík", "Okamžitě se mění na kuchyňskou sůl", "Voda se působením sodíku stává inertní", "Sodík s vodou vůbec nereaguje"],
-    correct: 0,
-    explanation: "Sodík prudce reaguje s vodou. Při reakci vzniká vodík, který se může vznítit."
-  },
-  {
-    question: "Proč je draslík důležitý pro rostliny?",
-    answers: ["Je významnou živinou a součástí některých hnojiv", "Je hlavní složkou atmosféry", "Je zdrojem kyslíku při fotosyntéze", "Je základní složkou skla"],
-    correct: 0,
-    explanation: "Draslík patří mezi důležité živiny rostlin a dodává se například ve formě hnojiv."
-  },
-  {
-    question: "Proč je vápník důležitý pro lidské tělo?",
-    answers: ["Je důležitý pro stavbu kostí a zubů", "Je hlavní součástí krevního barviva", "Je zdrojem energie pro buňky", "Nahrazuje v těle železo"],
-    correct: 0,
-    explanation: "Vápník je důležitý pro pevnost kostí a zubů."
-  },
-  {
-    question: "Které ionty se významně podílejí na tvrdosti vody?",
-    answers: ["Ionty vápníku a hořčíku", "Ionty stříbra a zlata", "Ionty vodíku a kyslíku", "Ionty dusíku a chloru"],
-    correct: 0,
-    explanation: "Tvrdost vody způsobují hlavně rozpuštěné sloučeniny vápníku a hořčíku."
-  },
-  {
-    question: "Proč je hořčík důležitý pro lidský organismus?",
-    answers: ["Podílí se na činnosti svalů a nervové soustavy", "Je hlavní složkou zubní skloviny", "Nahrazuje kyslík v krvi", "Zajišťuje tvorbu kuchyňské soli"],
-    correct: 0,
-    explanation: "Hořčík je důležitý pro správnou činnost svalů, nervů a řadu dějů v těle."
-  },
-  {
-    question: "Proč je fosfor důležitý pro rostliny?",
-    answers: ["Podporuje růst a je součástí hnojiv", "Způsobuje korozi kovů", "Je hlavní složkou vzduchu", "Používá se místo vody při fotosyntéze"],
-    correct: 0,
-    explanation: "Sloučeniny fosforu jsou důležité pro výživu rostlin a používají se v hnojivech."
-  },
-  {
-    question: "Kde se fosfor běžně využívá?",
-    answers: ["Při výrobě zápalek", "K plnění balónků", "K výrobě ochranných atmosfér", "K výrobě elektrických vodičů"],
-    correct: 0,
-    explanation: "Fosfor se využívá například při výrobě zápalek."
-  },
-  {
-    question: "Proč se mangan přidává do některých ocelí?",
-    answers: ["Zvyšuje tvrdost a odolnost proti opotřebení", "Snižuje pevnost oceli", "Mění ocel na barevné sklo", "Způsobuje, že ocel snadno rezaví"],
-    correct: 0,
-    explanation: "Mangan se používá jako přísada do ocelí, protože může zlepšovat jejich tvrdost a odolnost."
-  },
-  {
-    question: "K čemu se používá manganistan draselný?",
-    answers: ["Jako oxidační činidlo a k dezinfekci", "Jako plnivo do balónků", "Jako kovový vodič", "Jako hlavní složka cementu"],
-    correct: 0,
-    explanation: "Manganistan draselný má silné oxidační účinky a používá se například k dezinfekci."
-  },
-  {
-    question: "Proč se cín používá k pocínování plechu?",
-    answers: ["Chrání povrch před korozí", "Zvyšuje hořlavost plechu", "Mění plech na slitinu bronzu", "Způsobuje rychlé rezavění"],
-    correct: 0,
-    explanation: "Cínová vrstva chrání plech před působením vzduchu a vody."
-  },
-  {
-    question: "Které použití cínu je běžné v technické praxi?",
-    answers: ["Pájky a ochranné povlaky", "Výroba kapalného dusíku", "Dezinfekce pitné vody", "Plnění výbojek"],
-    correct: 0,
-    explanation: "Cín se používá například v pájkách a k vytváření ochranných povlaků na kovových materiálech."
-  },
-  {
-    question: "Proč se některé kovy používají na výrobu nádobí?",
-    answers: ["Dobře vedou teplo a jsou mechanicky odolné", "Jsou špatnými vodiči tepla", "Snadno se rozpouštějí ve vodě", "Jsou za běžných podmínek plynné"],
-    correct: 0,
-    explanation: "Kovy se na nádobí hodí díky dobré tepelné vodivosti a pevnosti."
-  },
-  {
-    question: "Proč se některé kovy pokrývají ochrannou vrstvou?",
-    answers: ["Aby se zpomalila koroze", "Aby se zvýšila jejich rozpustnost ve vodě", "Aby se změnily na nekovy", "Aby ztratily pevnost"],
-    correct: 0,
-    explanation: "Ochranné vrstvy omezují přístup kyslíku, vody nebo jiných látek k povrchu kovu a tím zpomalují korozi."
-  },
-  {
-    question: "Která skupina prvků se používá v osvětlovací technice díky svícení ve výboji?",
-    answers: ["Vzácné plyny", "Alkalické kovy", "Kovy alkalických zemin", "Přechodné kovy"],
-    correct: 0,
-    explanation: "Vzácné plyny se využívají ve výbojkách a reklamních trubicích, protože při elektrickém výboji mohou svítit."
-  },
-  {
-    question: "Proč jsou kovy vhodné pro výrobu drátů a plechů?",
-    answers: ["Jsou kujné a tažné", "Jsou vždy křehké", "Mají velmi nízkou pevnost", "Vždy tvoří plynné molekuly"],
-    correct: 0,
-    explanation: "Kujnost a tažnost umožňují kovy zpracovávat na plechy, dráty a další tvary."
-  },
-  {
-    question: "Jaký je hlavní rozdíl mezi kovem a nekovem z hlediska elektrické vodivosti?",
-    answers: ["Kovy většinou vedou proud dobře, nekovy většinou špatně", "Nekovy vždy vedou proud lépe než kovy", "Kovy elektrický proud nikdy nevedou", "Vodivost s typem prvku nijak nesouvisí"],
-    correct: 0,
-    explanation: "Dobrá elektrická vodivost je typická vlastnost kovů, zatímco většina nekovů proud vede špatně."
-  }
-    ];
+    document.addEventListener("DOMContentLoaded", () => {
+          const questionBank = [
+        {
+          question: "Která vlastnost je typická pro většinu kovů?",
+          answers: ["Dobře vedou elektrický proud a teplo", "Snadno tvoří plynné molekuly", "Mají velmi nízkou hustotu", "Jsou za běžných podmínek vždy kapalné"],
+          correct: 0,
+          explanation: "Většina kovů dobře vede elektrický proud i teplo, má kovový lesk a je dobře zpracovatelná."
+        },
+        {
+          question: "Která vlastnost je typická pro většinu nekovů?",
+          answers: ["Obvykle špatně vedou elektrický proud", "Mají vysokou elektrickou vodivost", "Jsou vždy kujné a tažné", "Vždy vytvářejí slitiny"],
+          correct: 0,
+          explanation: "Nekovy většinou špatně vedou elektrický proud a nemají typické kovové vlastnosti."
+        },
+        {
+          question: "Proč se měď často používá na elektrické vodiče?",
+          answers: ["Má velmi dobrou elektrickou vodivost", "Je nejreaktivnější kov", "Má velmi nízkou teplotu tání", "Je za běžných podmínek kapalná"],
+          correct: 0,
+          explanation: "Měď má výbornou elektrickou vodivost, proto se používá ve vodičích, kabelech a kontaktech."
+        },
+        {
+          question: "Která vlastnost mědi je důležitá při výrobě vodičů a kontaktů?",
+          answers: ["Tažnost a elektrická vodivost", "Křehkost a malá hustota", "Radioaktivita a tvrdost", "Hořlavost a rozpustnost ve vodě"],
+          correct: 0,
+          explanation: "Měď je dobře tažná a velmi dobře vede elektrický proud, proto je vhodná pro elektrotechniku."
+        },
+        {
+          question: "Proč se hliník používá v dopravě a konstrukcích?",
+          answers: ["Je lehký, pevný a dobře zpracovatelný", "Je velmi těžký a křehký", "Snadno rezaví ve vlhkém vzduchu", "Je za běžných podmínek kapalný"],
+          correct: 0,
+          explanation: "Hliník má malou hustotu, je poměrně pevný a dobře se tvaruje, proto se využívá v dopravě i konstrukcích."
+        },
+        {
+          question: "Proč hliník na vzduchu poměrně dobře odolává korozi?",
+          answers: ["Na povrchu se vytváří ochranná vrstva oxidu", "Hliník vůbec nereaguje s kyslíkem", "Hliník se ve vzduchu mění na slitinu", "Na povrchu se tvoří vrstva uhlíku"],
+          correct: 0,
+          explanation: "Na povrchu hliníku vzniká tenká vrstva oxidu hlinitého, která chrání kov před další korozí."
+        },
+        {
+          question: "Který kov je základem oceli?",
+          answers: ["Železo", "Měď", "Hliník", "Zinek"],
+          correct: 0,
+          explanation: "Ocel je slitina, jejímž hlavním základem je železo."
+        },
+        {
+          question: "Co se děje se železem ve vlhkém prostředí za přístupu kyslíku?",
+          answers: ["Koroduje a vzniká rez", "Mění se na ocel", "Pasivuje se", "Sublimuje"],
+          correct: 0,
+          explanation: "Železo ve vlhku reaguje s kyslíkem a vodou. Výsledkem je koroze, běžně označovaná jako rezavění."
+        },
+        {
+          question: "Která slitina se běžně používá na výrobu příborů?",
+        answers: ["Nerezová ocel", "Amalgám", "Mosaz", "Pájka"],
+        correct: 0,
+        explanation: "Nerezová ocel je odolná vůči korozi, pevná a hygienicky vhodná, proto se používá na výrobu příborů, nádobí a kuchyňských pomůcek."
+        },
+        {
+          question: "Proč je železo důležité pro lidské tělo?",
+          answers: ["Je součástí krevního barviva přenášejícího kyslík", "Je hlavní stavební složkou kostí", "Zajišťuje tvorbu zubní skloviny", "Nahrazuje v těle vápník"],
+          correct: 0,
+          explanation: "Železo je součástí hemoglobinu, který pomáhá přenášet kyslík v krvi."
+        },
+        {
+          question: "Proč se zinek používá k ochraně železa před korozí?",
+          answers: ["Vytváří ochranný povlak na povrchu železa", "Zvyšuje rozpustnost železa ve vodě", "Mění železo na nerezovou ocel", "Odstraňuje z povrchu železa kyslík"],
+          correct: 0,
+          explanation: "Pozinkování chrání železo před korozí, protože zinek tvoří ochrannou vrstvu."
+        },
+        {
+          question: "Která slitina vzniká smícháním mědi a zinku?",
+          answers: ["Mosaz", "Bronz", "Ocel", "Dural"],
+          correct: 0,
+          explanation: "Mosaz je slitina mědi a zinku."
+        },
+        {
+          question: "Která slitina vzniká smícháním mědi a cínu?",
+          answers: ["Bronz", "Mosaz", "Nerezová ocel", "Pájka"],
+          correct: 0,
+          explanation: "Bronz je slitina mědi a cínu."
+        },
+        {
+          question: "Proč se zlato používá ve šperkařství?",
+          answers: ["Je chemicky stálé, lesklé a dobře zpracovatelné", "Snadno koroduje a mění barvu", "Je velmi křehké a špatně kujné", "Je běžně rozpustné ve vodě"],
+          correct: 0,
+          explanation: "Zlato je ušlechtilý kov. Je stálé, má výrazný lesk a dobře se zpracovává."
+        },
+        {
+          question: "Proč se stříbro využívá v elektrotechnice?",
+          answers: ["Má velmi vysokou elektrickou vodivost", "Je nejlehčí ze všech kovů", "Je zcela odolné vůči černání", "Je za běžných podmínek plynné"],
+          correct: 0,
+          explanation: "Stříbro patří mezi nejlepší vodiče elektrického proudu, proto má význam v elektrotechnice."
+        },
+        {
+          question: "Proč může stříbro při delším pobytu na vzduchu černat?",
+          answers: ["Na povrchu vznikají sloučeniny stříbra se sírou", "Stříbro se mění na grafit", "Stříbro reaguje s dusíkem na vzduchu", "Stříbro se postupně rozpouští ve vodní páře"],
+          correct: 0,
+          explanation: "Stříbro může černat kvůli vzniku tmavých sloučenin na povrchu, zejména reakcí se sloučeninami síry."
+        },
+        {
+          question: "Který kov je za běžných podmínek kapalný?",
+          answers: ["Rtuť", "Cín", "Olovo", "Zinek"],
+          correct: 0,
+          explanation: "Rtuť je kov, který je za běžných podmínek kapalný."
+        },
+        {
+          question: "Proč se s rtutí musí zacházet velmi opatrně?",
+          answers: ["Je toxická a nebezpečné jsou i její páry", "Je velmi hořlavá na vzduchu", "Je silně radioaktivní", "Při dotyku okamžitě tuhne"],
+          correct: 0,
+          explanation: "Rtuť a její páry jsou toxické, proto je nutné zabránit úniku rtuti a jejímu vdechování."
+        },
+        {
+          question: "Proč se olovo dnes používá omezeněji než dříve?",
+          answers: ["Je toxické pro člověka i životní prostředí", "Je příliš lehké pro technické použití", "Snadno se rozpouští v čisté vodě", "Nelze jej zpracovávat do slitin"],
+          correct: 0,
+          explanation: "Olovo je toxický těžký kov, proto se jeho použití v mnoha výrobcích omezuje."
+        },
+        {
+          question: "K čemu se využívá olovo díky své vysoké hustotě?",
+          answers: ["K ochraně před některými druhy záření", "K výrobě lehkých konstrukcí letadel", "K plnění potápěčských lahví", "K výrobě elektrických izolantů"],
+          correct: 0,
+          explanation: "Olovo má vysokou hustotu a dobře pohlcuje některé druhy záření, proto se používá jako stínicí materiál."
+        },
+        {
+          question: "Která vlastnost kyslíku je důležitá při hoření?",
+          answers: ["Podporuje hoření látek", "Brání každé oxidaci", "Je inertní vůči většině prvků", "Je hlavní složkou zemního plynu"],
+          correct: 0,
+          explanation: "Kyslík sám nehoří, ale podporuje hoření jiných látek."
+        },
+        {
+          question: "Proč je kyslík nezbytný pro člověka?",
+          answers: ["Je potřebný pro dýchání buněk", "Je hlavní stavební složkou kostí", "Zajišťuje trávení tuků v žaludku", "Nahrazuje v těle vodu"],
+          correct: 0,
+          explanation: "Kyslík je nezbytný pro buněčné dýchání, při kterém organismy získávají energii."
+        },
+        {
+          question: "Který prvek je nejvíce zastoupeným plynem ve vzduchu?",
+          answers: ["Dusík", "Kyslík", "Oxid uhličitý", "Argon"],
+          correct: 0,
+          explanation: "Největší objemovou část vzduchu tvoří dusík."
+        },
+        {
+          question: "Proč dusík za běžných podmínek nepodporuje hoření?",
+          answers: ["Je poměrně málo reaktivní", "Je silné oxidační činidlo", "Snadno se rozkládá na kyslík", "Má výrazné dezinfekční účinky"],
+          correct: 0,
+          explanation: "Dusík je za běžných podmínek málo reaktivní, a proto hoření nepodporuje."
+        },
+        {
+          question: "K čemu se dusík používá díky své malé reaktivitě?",
+          answers: ["K vytváření ochranné atmosféry", "K bělení textilu", "K dezinfekci pitné vody", "K výrobě skla z písku"],
+          correct: 0,
+          explanation: "Dusík se používá jako inertní atmosféra tam, kde je potřeba omezit reakce se vzdušným kyslíkem."
+        },
+        {
+          question: "K čemu se používá kapalný dusík?",
+          answers: ["Jako chladicí médium", "Jako palivo pro běžné spalovací motory", "Jako dezinfekce bazénové vody", "Jako základní složka kuchyňské soli"],
+          correct: 0,
+          explanation: "Kapalný dusík má velmi nízkou teplotu, proto se využívá k chlazení."
+        },
+        {
+          question: "Proč je vodík považován za velmi lehký plyn?",
+          answers: ["Má nejmenší hustotu ze všech plynů", "Obsahuje nejvíce protonů v jádře", "Je těžší než vzduch", "Je tvořen velkými částicemi kovu"],
+          correct: 0,
+          explanation: "Vodík je nejlehčí prvek a má velmi malou hustotu."
+        },
+        {
+          question: "Proč se vodík dříve používal k plnění balónů?",
+          answers: ["Je lehčí než vzduch", "Je méně reaktivní než helium", "Má dezinfekční účinky", "Je hlavní složkou vzduchu"],
+          correct: 0,
+          explanation: "Vodík je velmi lehký plyn, takže umožňoval balónům stoupat."
+        },
+        {
+          question: "Proč je použití vodíku v balónech nebezpečné?",
+          answers: ["Je hořlavý a se vzduchem může tvořit výbušnou směs", "Je silně jedovatý i v malém množství", "Má vysokou hustotu", "Při běžné teplotě samovolně tuhne"],
+          correct: 0,
+          explanation: "Vodík je hořlavý a směs vodíku se vzduchem může být výbušná."
+        },
+        {
+          question: "K čemu se vodík významně používá v chemickém průmyslu?",
+          answers: ["K výrobě amoniaku", "K výrobě kuchyňské soli", "K bělení papíru chlornany", "K plnění běžných žárovek"],
+          correct: 0,
+          explanation: "Vodík se používá například při syntéze amoniaku, který je důležitý pro výrobu hnojiv."
+        },
+        {
+          question: "Proč je helium vhodnější k plnění balónků než vodík?",
+          answers: ["Je lehké a nehořlavé", "Je těžší a reaktivnější", "Podporuje hoření", "Snadno reaguje s kyslíkem"],
+          correct: 0,
+          explanation: "Helium je lehčí než vzduch a zároveň nehořlavé, proto je bezpečnější než vodík."
+        },
+        {
+          question: "Která vlastnost je typická pro vzácné plyny?",
+          answers: ["Mají velmi malou reaktivitu", "Snadno vytvářejí soli s kovy", "Jsou za běžných podmínek pevné", "Silně podporují hoření"],
+          correct: 0,
+          explanation: "Vzácné plyny mají zaplněnou valenční vrstvu elektronů, proto jsou velmi málo reaktivní."
+        },
+        {
+          question: "Proč se vzácné plyny používají v ochranných atmosférách?",
+          answers: ["Brání nežádoucím reakcím se vzdušným kyslíkem", "Zvyšují rychlost koroze", "Snadno reagují s kovy", "Rozkládají vodu na vodík a kyslík"],
+          correct: 0,
+          explanation: "Díky malé reaktivitě chrání vzácné plyny látky před reakcemi s kyslíkem a dalšími složkami vzduchu."
+        },
+        {
+          question: "Kde se využívá schopnost některých vzácných plynů svítit ve výboji?",
+          answers: ["V reklamních a osvětlovacích trubicích", "Při výrobě hnojiv", "Při výrobě cementu", "Při pozinkování železa"],
+          correct: 0,
+          explanation: "Vzácné plyny mohou ve výbojových trubicích vydávat světlo, proto se využívají v osvětlovací technice."
+        },
+        {
+          question: "Proč se argon používá například při svařování?",
+          answers: ["Vytváří ochrannou inertní atmosféru", "Zvyšuje obsah kyslíku v okolí svaru", "Reaguje s kovem a vytváří rez", "Slouží jako silné oxidační činidlo"],
+          correct: 0,
+          explanation: "Argon chrání svařovaný kov před nežádoucí reakcí se vzdušným kyslíkem."
+        },
+        {
+          question: "Která vlastnost je typická pro halogeny?",
+          answers: ["Jsou reaktivní nekovy", "Jsou málo reaktivní vzácné plyny", "Jsou kujné a tažné kovy", "Jsou hlavní složkou slitin"],
+          correct: 0,
+          explanation: "Halogeny jsou reaktivní nekovy, které snadno tvoří sloučeniny."
+        },
+        {
+          question: "Proč se halogeny v přírodě obvykle nevyskytují jako volné prvky?",
+          answers: ["Jsou velmi reaktivní a tvoří sloučeniny", "Mají příliš nízkou hustotu", "Jsou všechny radioaktivní", "Nerozpouštějí se v žádných látkách"],
+          correct: 0,
+          explanation: "Halogeny snadno reagují s jinými prvky, a proto se v přírodě nacházejí hlavně ve sloučeninách."
+        },
+        {
+          question: "K čemu se používá chlor při úpravě vody?",
+          answers: ["K dezinfekci vody", "Ke zvýšení tvrdosti vody", "K odstranění všech minerálních látek", "K výrobě kyslíku z vody"],
+          correct: 0,
+          explanation: "Chlor ničí mikroorganismy, proto se používá k dezinfekci vody."
+        },
+        {
+          question: "Které použití chloru je běžné v průmyslu?",
+          answers: ["Výroba chlorovaných organických sloučenin a plastů", "Výroba hliníku z bauxitu", "Plnění potápěčských lahví", "Výroba dusíkatých hnojiv"],
+          correct: 0,
+          explanation: "Chlor se používá například při výrobě chlorovaných organických sloučenin, které mají význam při výrobě některých plastů."
+        },
+        {
+          question: "Jaká vlastnost chloru vyžaduje opatrnost při zacházení?",
+          answers: ["Je toxický a dráždivý plyn", "Je zcela netečný plyn", "Je biologicky nezbytný k dýchání", "Je pevný kov s vysokou hustotou"],
+          correct: 0,
+          explanation: "Chlor je toxický a dráždivý, proto se s ním musí zacházet opatrně."
+        },
+        {
+          question: "Proč je fluor považován za mimořádně reaktivní prvek?",
+          answers: ["Snadno reaguje s mnoha látkami", "Má vlastnosti vzácného plynu", "Je velmi málo elektronegativní", "V přírodě se běžně vyskytuje volný"],
+          correct: 0,
+          explanation: "Fluor patří mezi nejreaktivnější prvky a je velmi silným oxidačním činidlem."
+        },
+        {
+          question: "Proč je jód důležitý pro lidský organismus?",
+          answers: ["Je potřebný pro správnou činnost štítné žlázy", "Je hlavním zdrojem energie pro svaly", "Je základní složkou krevního barviva", "Je stavební složkou zubní skloviny místo vápníku"],
+          correct: 0,
+          explanation: "Jód je důležitý pro tvorbu hormonů štítné žlázy."
+        },
+        {
+          question: "Proč se do kuchyňské soli někdy přidávají sloučeniny jódu?",
+          answers: ["Pomáhají předcházet nedostatku jódu ve stravě", "Zvyšují obsah kyslíku v soli", "Způsobují lepší elektrickou vodivost soli", "Mění sůl na dezinfekční prostředek"],
+          correct: 0,
+          explanation: "Jodidovaná sůl pomáhá doplňovat jód, který je důležitý pro štítnou žlázu."
+        },
+        {
+          question: "Která vlastnost jódu se často ukazuje při školních pokusech?",
+          answers: ["Sublimace", "Koroze", "Krystalizace z kovové taveniny", "Elektrická vodivost jako u kovů"],
+          correct: 0,
+          explanation: "Jód může přecházet z pevného skupenství přímo na páry, což se nazývá sublimace."
+        },
+        {
+          question: "Která vlastnost je typická pro síru?",
+          answers: ["Je žlutá pevná nekovová látka", "Je bezbarvý vzácný plyn", "Je kapalný kov", "Je stříbrolesklý alkalický kov"],
+          correct: 0,
+          explanation: "Síra je známá jako žlutá pevná látka a patří mezi nekovy."
+        },
+        {
+          question: "K čemu se využívá velká část síry v průmyslu?",
+          answers: ["K výrobě kyseliny sírové", "K výrobě hliníkových slitin", "K plnění výbojek", "K výrobě kapalného dusíku"],
+          correct: 0,
+          explanation: "Síra je významnou surovinou pro výrobu kyseliny sírové."
+        },
+        {
+          question: "K čemu se používá síra při zpracování kaučuku?",
+          answers: ["K vulkanizaci", "K elektrolýze", "K pasivaci", "K frakční destilaci"],
+          correct: 0,
+          explanation: "Síra se používá při vulkanizaci kaučuku, čímž se zlepšují vlastnosti pryže."
+        },
+        {
+          question: "Jak poznáme sulfan podle zápachu?",
+          answers: ["Zapáchá po zkažených vejcích", "Má zápach po chloru", "Je typicky nasládlý", "Je zcela bez zápachu"],
+          correct: 0,
+          explanation: "Sulfan je jedovatý plyn se zápachem po zkažených vejcích."
+        },
+        {
+          question: "Proč je uhlík významný pro živé organismy?",
+          answers: ["Je základním prvkem organických látek", "Je hlavní složkou vzduchu", "Je nezbytný pouze pro tvorbu kovů", "Nahrazuje v organismech vodík"],
+          correct: 0,
+          explanation: "Uhlík tvoří základ organických látek, ze kterých jsou stavěna těla živých organismů."
+        },
+        {
+          question: "Která forma uhlíku je velmi tvrdá a používá se k broušení nebo řezání?",
+          answers: ["Diamant", "Grafit", "Aktivní uhlí", "Saze"],
+          correct: 0,
+          explanation: "Diamant je velmi tvrdá forma uhlíku a využívá se ve šperkařství i v průmyslu."
+        },
+        {
+          question: "Proč se grafit používá v tužkách?",
+          answers: ["Je měkký a zanechává stopu na papíře", "Je průhledný a velmi tvrdý", "Snadno se taví při pokojové teplotě", "Je kapalný a dobře se rozpíjí"],
+          correct: 0,
+          explanation: "Grafit je měkký a jeho vrstvy po sobě snadno kloužou, proto zanechává stopu."
+        },
+        {
+          question: "Proč grafit vede elektrický proud?",
+          answers: ["Obsahuje pohyblivé elektrony ve své struktuře", "Je složen z iontů kuchyňské soli", "Je kapalný kov", "Obsahuje velké množství vody"],
+          correct: 0,
+          explanation: "Ve struktuře grafitu jsou pohyblivé elektrony, které umožňují vedení elektrického proudu."
+        },
+        {
+          question: "K čemu se používá aktivní uhlí?",
+          answers: ["K zachycování některých nečistot a plynů", "K výrobě chlorované vody", "K výrobě kovových slitin", "K nahrazení kyslíku při dýchání"],
+          correct: 0,
+          explanation: "Aktivní uhlí má velký povrch a dokáže na sebe vázat některé látky, proto se používá ve filtrech."
+        },
+        {
+          question: "Proč se oxid uhličitý používá v některých hasicích přístrojích?",
+          answers: ["Omezuje přístup kyslíku k hořící látce", "Podporuje hoření paliva", "Rozkládá vodu na vodík a kyslík", "Zvyšuje teplotu plamene"],
+          correct: 0,
+          explanation: "Oxid uhličitý nepodporuje hoření a vytlačuje kyslík z okolí plamene."
+        },
+        {
+          question: "Co je suchý led?",
+          answers: ["Pevný oxid uhličitý", "Zmrzlá destilovaná voda", "Pevný kyslík", "Krystalický chlorid sodný"],
+          correct: 0,
+          explanation: "Suchý led je pevný oxid uhličitý, který za běžného tlaku sublimuje."
+        },
+        {
+          question: "Proč se křemík používá v elektronice?",
+          answers: ["Má polovodičové vlastnosti", "Je nejlepší kovový vodič", "Je běžně kapalný", "Je silně radioaktivní"],
+          correct: 0,
+          explanation: "Křemík je polovodič, proto je důležitý při výrobě čipů a elektronických součástek."
+        },
+        {
+          question: "Kde se křemík v přírodě nejčastěji vyskytuje?",
+          answers: ["Ve sloučeninách, například v křemeni a křemičitanech", "Jako volný plyn ve vzduchu", "Pouze v živých organismech", "Jako kapalný kov v rudách"],
+          correct: 0,
+          explanation: "Křemík se v přírodě vyskytuje hlavně v oxidu křemičitém a křemičitanech."
+        },
+        {
+          question: "Proč jsou sloučeniny křemíku důležité ve stavebnictví?",
+          answers: ["Jsou součástí skla, keramiky, cementu a hornin", "Používají se výhradně jako paliva", "Jsou hlavní složkou vzduchu", "Nahrazují železo při výrobě oceli"],
+          correct: 0,
+          explanation: "Sloučeniny křemíku jsou součástí mnoha přírodních i technických materiálů, například skla, keramiky a cementu."
+        },
+        {
+          question: "Která vlastnost alkalických kovů, například sodíku a draslíku, je pro ně typická?",
+          answers: ["Jsou velmi reaktivní", "Jsou zcela inertní", "Jsou za běžných podmínek plynné", "Patří mezi ušlechtilé kovy"],
+          correct: 0,
+          explanation: "Alkalické kovy jsou velmi reaktivní, zejména při styku s vodou."
+        },
+        {
+          question: "Proč se sodík nesmí vhazovat do vody?",
+          answers: ["Prudce reaguje s vodou a vzniká vodík", "Okamžitě se mění na kuchyňskou sůl", "Voda se působením sodíku stává inertní", "Sodík s vodou vůbec nereaguje"],
+          correct: 0,
+          explanation: "Sodík prudce reaguje s vodou. Při reakci vzniká vodík, který se může vznítit."
+        },
+        {
+          question: "Proč je draslík důležitý pro rostliny?",
+          answers: ["Je významnou živinou a součástí některých hnojiv", "Je hlavní složkou atmosféry", "Je zdrojem kyslíku při fotosyntéze", "Je základní složkou skla"],
+          correct: 0,
+          explanation: "Draslík patří mezi důležité živiny rostlin a dodává se například ve formě hnojiv."
+        },
+        {
+          question: "Proč je vápník důležitý pro lidské tělo?",
+          answers: ["Je důležitý pro stavbu kostí a zubů", "Je hlavní součástí krevního barviva", "Je zdrojem energie pro buňky", "Nahrazuje v těle železo"],
+          correct: 0,
+          explanation: "Vápník je důležitý pro pevnost kostí a zubů."
+        },
+        {
+          question: "Které ionty se významně podílejí na tvrdosti vody?",
+          answers: ["Ionty vápníku a hořčíku", "Ionty stříbra a zlata", "Ionty vodíku a kyslíku", "Ionty dusíku a chloru"],
+          correct: 0,
+          explanation: "Tvrdost vody způsobují hlavně rozpuštěné sloučeniny vápníku a hořčíku."
+        },
+        {
+          question: "Proč je hořčík důležitý pro lidský organismus?",
+          answers: ["Podílí se na činnosti svalů a nervové soustavy", "Je hlavní složkou zubní skloviny", "Nahrazuje kyslík v krvi", "Zajišťuje tvorbu kuchyňské soli"],
+          correct: 0,
+          explanation: "Hořčík je důležitý pro správnou činnost svalů, nervů a řadu dějů v těle."
+        },
+        {
+          question: "Proč je fosfor důležitý pro rostliny?",
+          answers: ["Podporuje růst a je součástí hnojiv", "Způsobuje korozi kovů", "Je hlavní složkou vzduchu", "Používá se místo vody při fotosyntéze"],
+          correct: 0,
+          explanation: "Sloučeniny fosforu jsou důležité pro výživu rostlin a používají se v hnojivech."
+        },
+        {
+          question: "Kde se fosfor běžně využívá?",
+          answers: ["Při výrobě zápalek", "K plnění balónků", "K výrobě ochranných atmosfér", "K výrobě elektrických vodičů"],
+          correct: 0,
+          explanation: "Fosfor se využívá například při výrobě zápalek."
+        },
+        {
+          question: "Proč se mangan přidává do některých ocelí?",
+          answers: ["Zvyšuje tvrdost a odolnost proti opotřebení", "Snižuje pevnost oceli", "Mění ocel na barevné sklo", "Způsobuje, že ocel snadno rezaví"],
+          correct: 0,
+          explanation: "Mangan se používá jako přísada do ocelí, protože může zlepšovat jejich tvrdost a odolnost."
+        },
+        {
+          question: "K čemu se používá manganistan draselný?",
+          answers: ["Jako oxidační činidlo a k dezinfekci", "Jako plnivo do balónků", "Jako kovový vodič", "Jako hlavní složka cementu"],
+          correct: 0,
+          explanation: "Manganistan draselný má silné oxidační účinky a používá se například k dezinfekci."
+        },
+        {
+          question: "Proč se cín používá k pocínování plechu?",
+          answers: ["Chrání povrch před korozí", "Zvyšuje hořlavost plechu", "Mění plech na slitinu bronzu", "Způsobuje rychlé rezavění"],
+          correct: 0,
+          explanation: "Cínová vrstva chrání plech před působením vzduchu a vody."
+        },
+        {
+          question: "Které použití cínu je běžné v technické praxi?",
+          answers: ["Pájky a ochranné povlaky", "Výroba kapalného dusíku", "Dezinfekce pitné vody", "Plnění výbojek"],
+          correct: 0,
+          explanation: "Cín se používá například v pájkách a k vytváření ochranných povlaků na kovových materiálech."
+        },
+        {
+          question: "Proč se některé kovy používají na výrobu nádobí?",
+          answers: ["Dobře vedou teplo a jsou mechanicky odolné", "Jsou špatnými vodiči tepla", "Snadno se rozpouštějí ve vodě", "Jsou za běžných podmínek plynné"],
+          correct: 0,
+          explanation: "Kovy se na nádobí hodí díky dobré tepelné vodivosti a pevnosti."
+        },
+        {
+          question: "Proč se některé kovy pokrývají ochrannou vrstvou?",
+          answers: ["Aby se zpomalila koroze", "Aby se zvýšila jejich rozpustnost ve vodě", "Aby se změnily na nekovy", "Aby ztratily pevnost"],
+          correct: 0,
+          explanation: "Ochranné vrstvy omezují přístup kyslíku, vody nebo jiných látek k povrchu kovu a tím zpomalují korozi."
+        },
+        {
+          question: "Která skupina prvků se používá v osvětlovací technice díky svícení ve výboji?",
+          answers: ["Vzácné plyny", "Alkalické kovy", "Kovy alkalických zemin", "Přechodné kovy"],
+          correct: 0,
+          explanation: "Vzácné plyny se využívají ve výbojkách a reklamních trubicích, protože při elektrickém výboji mohou svítit."
+        },
+        {
+          question: "Proč jsou kovy vhodné pro výrobu drátů a plechů?",
+          answers: ["Jsou kujné a tažné", "Jsou vždy křehké", "Mají velmi nízkou pevnost", "Vždy tvoří plynné molekuly"],
+          correct: 0,
+          explanation: "Kujnost a tažnost umožňují kovy zpracovávat na plechy, dráty a další tvary."
+        },
+        {
+          question: "Jaký je hlavní rozdíl mezi kovem a nekovem z hlediska elektrické vodivosti?",
+          answers: ["Kovy většinou vedou proud dobře, nekovy většinou špatně", "Nekovy vždy vedou proud lépe než kovy", "Kovy elektrický proud nikdy nevedou", "Vodivost s typem prvku nijak nesouvisí"],
+          correct: 0,
+          explanation: "Dobrá elektrická vodivost je typická vlastnost kovů, zatímco většina nekovů proud vede špatně."
+        }
+          ];
 
-    const state = {
-      round: [],
-      current: 0,
-      score: 0,
-      lightnings: 0,
-      answered: false,
-      history: []
-    };
+          const state = {
+            round: [],
+            current: 0,
+            score: 0,
+            lightnings: 0,
+            answered: false,
+            history: []
+          };
 
-    const $ = (id) => document.getElementById(id);
+          const $ = (id) => document.getElementById(id);
 
-    const screens = {
-      start: $("startScreen"),
-      game: $("gameScreen"),
-      result: $("resultScreen")
-    };
+          const screens = {
+            start: $("startScreen"),
+            game: $("gameScreen"),
+            result: $("resultScreen")
+          };
 
-    function showScreen(name) {
-      Object.values(screens).forEach(screen => screen.classList.remove("active"));
-      screens[name].classList.add("active");
-    }
+          function showScreen(name) {
+            Object.values(screens).forEach(screen => screen.classList.remove("active"));
+            screens[name].classList.add("active");
+          }
 
-    function shuffle(array) {
-      return [...array].sort(() => Math.random() - 0.5);
-    }
+          function shuffle(array) {
+            return [...array].sort(() => Math.random() - 0.5);
+          }
 
-    function startGame() {
-      const available = questionBank;
-      const count = 10;
+          function startGame() {
+            const available = questionBank;
+            const count = 10;
 
-      state.round = shuffle(available).slice(0, Math.min(count, available.length));
-      state.current = 0;
-      state.score = 0;
-      state.lightnings = 0;
-      state.answered = false;
-      state.history = [];
+            state.round = shuffle(available).slice(0, Math.min(count, available.length));
+            state.current = 0;
+            state.score = 0;
+            state.lightnings = 0;
+            state.answered = false;
+            state.history = [];
 
-      updateHeader();
-      showScreen("game");
-      renderQuestion();
-    }
+            updateHeader();
+            showScreen("game");
+            renderQuestion();
+          }
 
-    function updateHeader() {
-      $("roundNow").textContent = Math.min(state.current + 1, state.round.length || 0);
-      $("lightnings").textContent = state.lightnings;
-      $("scoreLabel").textContent = `Správně: ${state.score}`;
-      const progress = state.round.length ? (state.current / state.round.length) * 100 : 0;
-      $("progressBar").style.width = `${progress}%`;
-    }
+          function updateHeader() {
+            $("roundNow").textContent = Math.min(state.current + 1, state.round.length || 0);
+            $("lightnings").textContent = state.lightnings;
+            $("scoreLabel").textContent = `Správně: ${state.score}`;
+            const progress = state.round.length ? (state.current / state.round.length) * 100 : 0;
+            $("progressBar").style.width = `${progress}%`;
+          }
 
-    function renderQuestion() {
-      const q = state.round[state.current];
-      state.answered = false;      $("questionText").textContent = q.question;
-      $("feedback").className = "feedback";
-      $("feedback").textContent = "";
-      $("nextBtn").hidden = true;
-      $("answers").innerHTML = "";
-      updateHeader();
+          function renderQuestion() {
+            const q = state.round[state.current];
+            state.answered = false;      $("questionText").textContent = q.question;
+            $("feedback").className = "feedback";
+            $("feedback").textContent = "";
+            $("nextBtn").hidden = true;
+            $("answers").innerHTML = "";
+            updateHeader();
 
-      const mappedAnswers = q.answers.map((text, originalIndex) => ({ text, originalIndex }));
-      shuffle(mappedAnswers).forEach((answer, visibleIndex) => {
-        const button = document.createElement("button");
-        button.className = "answer";
-        button.type = "button";
-        button.innerHTML = `<span aria-hidden="true">${String.fromCharCode(65 + visibleIndex)}.</span> ${answer.text}`;
-        button.addEventListener("click", () => chooseAnswer(button, answer.originalIndex));
-        $("answers").appendChild(button);
-      });
-    }
+            const mappedAnswers = q.answers.map((text, originalIndex) => ({ text, originalIndex }));
+            shuffle(mappedAnswers).forEach((answer, visibleIndex) => {
+              const button = document.createElement("button");
+              button.className = "answer";
+              button.type = "button";
+              button.innerHTML = `<span aria-hidden="true">${String.fromCharCode(65 + visibleIndex)}.</span> ${answer.text}`;
+              button.addEventListener("click", () => chooseAnswer(button, answer.originalIndex));
+              $("answers").appendChild(button);
+            });
+          }
 
-    function chooseAnswer(button, selectedIndex) {
-      if (state.answered) return;
-      state.answered = true;
+          function chooseAnswer(button, selectedIndex) {
+            if (state.answered) return;
+            state.answered = true;
 
-      const q = state.round[state.current];
-      const isCorrect = selectedIndex === q.correct;
-      const buttons = [...document.querySelectorAll(".answer")];
+            const q = state.round[state.current];
+            const isCorrect = selectedIndex === q.correct;
+            const buttons = [...document.querySelectorAll(".answer")];
 
-      buttons.forEach(btn => {
-        btn.disabled = true;
-        const text = btn.textContent.replace(/^[A-D]\.\s*/, "").trim();
-        const originalIndex = q.answers.indexOf(text);
-        if (originalIndex === q.correct) btn.classList.add("correct");
-      });
+            buttons.forEach(btn => {
+              btn.disabled = true;
+              const text = btn.textContent.replace(/^[A-D]\.\s*/, "").trim();
+              const originalIndex = q.answers.indexOf(text);
+              if (originalIndex === q.correct) btn.classList.add("correct");
+            });
 
-      if (isCorrect) {
-        state.score += 1;
-        state.lightnings += 1;
-        button.classList.add("correct");
-        $("feedback").innerHTML = `✅ Správně! Získáváš energii.<br><span class="small">${q.explanation}</span>`;
-      } else {
-        button.classList.add("wrong");
-        $("feedback").innerHTML = `❌ To není správně. Správná odpověď: <strong>${q.answers[q.correct]}</strong>.<br><span class="small">${q.explanation}</span>`;
-      }
+            if (isCorrect) {
+              state.score += 1;
+              state.lightnings += 1;
+              button.classList.add("correct");
+              $("feedback").innerHTML = `✅ Správně! Získáváš energii.<br><span class="small">${q.explanation}</span>`;
+            } else {
+              button.classList.add("wrong");
+              $("feedback").innerHTML = `❌ To není správně. Správná odpověď: <strong>${q.answers[q.correct]}</strong>.<br><span class="small">${q.explanation}</span>`;
+            }
 
-      state.history.push({
-        question: q.question,
-        selected: q.answers[selectedIndex],
-        correct: q.answers[q.correct],
-        isCorrect
-      });
+            state.history.push({
+              question: q.question,
+              selected: q.answers[selectedIndex],
+              correct: q.answers[q.correct],
+              isCorrect
+            });
 
-      $("feedback").classList.add("show");
-      $("nextBtn").hidden = false;
-      updateHeader();
-    }
+            $("feedback").classList.add("show");
+            $("nextBtn").hidden = false;
+            updateHeader();
+          }
 
-    function nextQuestion() {
-      state.current += 1;
-      if (state.current >= state.round.length) {
-        showResults();
-      } else {
-        renderQuestion();
-      }
-    }
+          function nextQuestion() {
+            state.current += 1;
+            if (state.current >= state.round.length) {
+              showResults();
+            } else {
+              renderQuestion();
+            }
+          }
 
-    function showResults() {
-      $("roundNow").textContent = state.round.length;
-      $("progressBar").style.width = "100%";
-      showScreen("result");
+          function showResults() {
+            $("roundNow").textContent = state.round.length;
+            $("progressBar").style.width = "100%";
+            showScreen("result");
 
-      const total = state.round.length;
-      const percent = Math.round((state.score / total) * 100);
-      $("finalScore").textContent = `${state.score}/${total}`;
-      $("finalLightnings").textContent = state.lightnings;
+            const total = state.round.length;
+            const percent = Math.round((state.score / total) * 100);
+            $("finalScore").textContent = `${state.score}/${total}`;
+            $("finalLightnings").textContent = state.lightnings;
 
-      let message = "Dobrá práce!";
-      if (percent === 100) message = "Perfektní výsledek! Máš maximum energie.";
-      else if (percent >= 80) message = "Výborně! Většinu otázek máš správně.";
-      else if (percent >= 50) message = "Slušný výkon. Ještě pár pokusů a bude to skvělé.";
-      else message = "Nevadí, zkus další kolo a nasbírej více energie.";
+            let message = "Dobrá práce!";
+            if (percent === 100) message = "Perfektní výsledek! Máš maximum energie.";
+            else if (percent >= 80) message = "Výborně! Většinu otázek máš správně.";
+            else if (percent >= 50) message = "Slušný výkon. Ještě pár pokusů a bude to skvělé.";
+            else message = "Nevadí, zkus další kolo a nasbírej více energie.";
 
-      $("resultMessage").textContent = message;
-      renderReview();
-    }
+            $("resultMessage").textContent = message;
+            renderReview();
+          }
 
-    function renderReview() {
-      const review = $("review");
-      review.innerHTML = "";
-      state.history.forEach((item, index) => {
-        const div = document.createElement("div");
-        div.className = `review-item ${item.isCorrect ? "good" : "bad"}`;
-        div.innerHTML = `
-          <strong>${index + 1}. ${item.question}</strong>
-          <div class="small">Tvoje odpověď: ${item.selected}</div>
-          <div class="small">Správně: ${item.correct}</div>
-        `;
-        review.appendChild(div);
-      });
-    }
+          function renderReview() {
+            const review = $("review");
+            review.innerHTML = "";
+            state.history.forEach((item, index) => {
+              const div = document.createElement("div");
+              div.className = `review-item ${item.isCorrect ? "good" : "bad"}`;
+              div.innerHTML = `
+                <strong>${index + 1}. ${item.question}</strong>
+                <div class="small">Tvoje odpověď: ${item.selected}</div>
+                <div class="small">Správně: ${item.correct}</div>
+              `;
+              review.appendChild(div);
+            });
+          }
 
-    $("startBtn").addEventListener("click", startGame);
-    $("nextBtn").addEventListener("click", nextQuestion);
-    $("restartBtn").addEventListener("click", () => {
-      $("review").hidden = true;
-      $("showReviewBtn").textContent = "Zobrazit přehled";
-      showScreen("start");
-      $("roundNow").textContent = "0";
-      $("lightnings").textContent = "0";
-    });
-    $("showReviewBtn").addEventListener("click", () => {
-      const review = $("review");
-      review.hidden = !review.hidden;
-      $("showReviewBtn").textContent = review.hidden ? "Zobrazit přehled" : "Skrýt přehled";
+          $("startBtn").addEventListener("click", startGame);
+          $("nextBtn").addEventListener("click", nextQuestion);
+          $("restartBtn").addEventListener("click", () => {
+            $("review").hidden = true;
+            $("showReviewBtn").textContent = "Zobrazit přehled";
+            showScreen("start");
+            $("roundNow").textContent = "0";
+            $("lightnings").textContent = "0";
+          });
+          $("showReviewBtn").addEventListener("click", () => {
+            const review = $("review");
+            review.hidden = !review.hidden;
+            $("showReviewBtn").textContent = review.hidden ? "Zobrazit přehled" : "Skrýt přehled";
+          });
+
     });
   </script>
 </body>
